@@ -27,7 +27,7 @@
 			try{
 				$stmt = $conn->prepare("UPDATE cart SET quantity = quantity + :quantity WHERE user_id=:user_id AND product_id=:product_id");
 				$stmt->execute(['user_id'=>$user['id'], 'product_id'=>$id, 'quantity'=>$quantity]);
-				$output['message'] = 'Item added to cart';
+				$output['message'] = 'Quantity updated in cart';
 			}
 			catch(PDOException $e){
 				$output['error'] = true;

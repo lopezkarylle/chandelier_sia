@@ -223,6 +223,7 @@ try {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Payment</title>
+    <link href="../images/chandelier_logo.png" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://js.stripe.com/v3/"></script>
@@ -244,8 +245,17 @@ try {
 
         const addressElement = elements.create("address", {
         mode: "shipping",
-        });
-        addressElement.mount("#address-element");
+        display: {
+          name: "split",
+        },
+        onChange: (event) => {
+          const firstName = event.value.firstName || "";
+          const lastName = event.value.lastName || "";
+          // Use the firstName and lastName values as needed
+        },
+      });
+      addressElement.mount("#address-element");
+
 
         const paymentElement = elements.create('payment');
         paymentElement.mount('#payment-element');
@@ -283,7 +293,7 @@ try {
     <main>
     <center><img src="../images/chandelier_logo.png" alt="Logo" style="width: 150px; height: 150px;"></center>
 
-      <form id="payment-form">
+      <form id="payment-form" style="background-color: #F5F1E8;">
       <center><label style="color: #00000; font-weight: bold; font-size: 22px; font-family: Palatino, sans-serif;" for="payment-element">Billing Details</label></center>
         <hr>
         <div id="link-authentication-element">

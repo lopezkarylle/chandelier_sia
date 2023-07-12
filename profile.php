@@ -44,11 +44,11 @@
 	        				<div class="col-sm-9">
 	        					<div class="row">
 	        						<div class="col-sm-3">
-	        							<h4>Name:</h4>
-	        							<h4>Email:</h4>
-	        							<h4>Contact Info:</h4>
-	        							<h4>Address:</h4>
-	        							<h4>Member Since:</h4>
+	        							<h4><b>Name:</b></h4>
+	        							<h4><b>Email:</b></h4>
+	        							<h4><b>Contact Info:</b></h4>
+	        							<h4><b>Address:</b></h4>
+	        							<h4><b>Member Since:</b></h4>
 	        						</div>
 	        						<div class="col-sm-9">
 	        							<h4><?php echo $user['firstname'].' '.$user['lastname']; ?>
